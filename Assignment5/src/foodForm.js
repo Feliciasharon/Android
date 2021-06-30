@@ -1,46 +1,50 @@
-import React, { Component } from 'react';
-import { StyleSheet, View, TextInput, Text, TouchableOpacity, Image } from 'react-native'
-import { connect } from 'react-redux';
+import React, { useState } from 'react';
+import {
+  StyleSheet,
+  View,
+  TextInput,
+  Text,
+  TouchableOpacity,
+  Image
+} from 'react-native'
+import { useDispatch } from 'react-redux';
 import { addFood } from './actions/food';
 
-class FoodForm extends Component{
+const FoodForm = ({ navigation }) => {
 
-static navigationOptions = {
-title:'Home',
-headerTintColor:'white',
-headerStyle: {
-backgroundColor:'blue',
-},
-};
-state = {
-food:null
-}
+  const [food, setFood] = useState('')
 
-render(){
+  const dispatch = useDispatch();
+
+  const submitFood = (food) => dispatch(addFood(food))
+
   return (
     <View style={styles.container}>
 
       <Text style={styles.title}>Food Form</Text>
       <TextInput
-        value={this.state.food}
+        value={food}
         placeholder='Name'
         style={styles.foodInput}
-        onChangeText={(food) => this.setState({ food })}
+        onChangeText={(food) => setFood(food)}
       />
       <TouchableOpacity
         style={{ marginBottom: 16 }}
-        onPress={() => this.props.add(this.state.food)}>
+        onPress={() => {
+          submitFood(food)
+          setFood('')
+        }}>
         <Text style={{ fontSize: 22, color: '#5fc9f8' }}>Submit</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={{ marginBottom: 16 }}
-        onPress={() => this.props.navigation.navigate('FoodList')}>
+        onPress={() =>
+          navigation.navigate('FoodList')}>
         <Text style={{ fontSize: 22, color: 'white' }}>Go to FoodList</Text>
       </TouchableOpacity>
     </View>
   );
 }
-};
 
 const styles = StyleSheet.create({
   container: {
@@ -53,7 +57,7 @@ const styles = StyleSheet.create({
     fontSize: 48,
     marginBottom: 30,
     marginTop: 16,
-    color: 'white'
+    color: 'plum'
   },
   foodInput: {
     fontSize: 24,
@@ -73,17 +77,4 @@ const styles = StyleSheet.create({
   }
 });
 
-const mapStateToProps = (state) => {
-console.log(state);
-return{
-foods: state.foodReducer.foodList
-}
-}
-
-const mapDispatchToProps = (dispatch) => {
-return{
-add: (food) => dispatch(addFood(food)),
-}
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(FoodForm);
+export default FoodForm;
