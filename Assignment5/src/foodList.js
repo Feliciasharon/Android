@@ -42,7 +42,6 @@ const FoodList = () => {
 
 const styles = StyleSheet.create({
   listContainer: {
-//backgroundColor: 'green',
     padding: 20
   },
   listText: {
@@ -63,9 +62,7 @@ const styles = StyleSheet.create({
 
           marginTop:10,
           color: 'black',
-
-          //fontWeight: 'bold',
-           fontSize: 25,
+          fontSize: 25,
       },
 });
 
