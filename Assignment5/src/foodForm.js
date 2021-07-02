@@ -20,11 +20,14 @@ const FoodForm = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-
+      <Image
+                style={styles.image}
+                source={{uri:'https://www.transparentpng.com/thumb/food/X1SylL-food-logo-high-quality-png.png'}}
+              />
       <Text style={styles.title}>Food Form</Text>
       <TextInput
         value={food}
-        placeholder='Name'
+        placeholder='Enter Food'
         style={styles.foodInput}
         onChangeText={(food) => setFood(food)}
       />
@@ -40,7 +43,7 @@ const FoodForm = ({ navigation }) => {
         style={{ marginBottom: 16 }}
         onPress={() =>
           navigation.navigate('FoodList')}>
-        <Text style={{ fontSize: 22, color: 'white' }}>Go to FoodList</Text>
+        <Text style={{ fontSize: 22, color: 'maroon' }}>Go to FoodList</Text>
       </TouchableOpacity>
     </View>
   );
@@ -49,7 +52,7 @@ const FoodForm = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#212121',
+    backgroundColor: 'mistyrose',
     alignItems: 'center',
     justifyContent: 'center'
   },
@@ -57,7 +60,7 @@ const styles = StyleSheet.create({
     fontSize: 48,
     marginBottom: 30,
     marginTop: 16,
-    color: 'plum'
+    color: 'black'
   },
   foodInput: {
     fontSize: 24,
@@ -71,10 +74,8 @@ const styles = StyleSheet.create({
   image: {
     width: 120,
     height: 120,
-    borderColor: 'orange',
-    borderWidth: 2,
-    borderRadius: 100,
   }
 });
+
 
 export default FoodForm;
