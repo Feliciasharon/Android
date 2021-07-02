@@ -27,7 +27,7 @@ export default AppStack = () =>
         options={{
           headerTintColor: 'white',
           headerStyle: {
-            backgroundColor: 'green',
+            backgroundColor: 'blue',
           }
 
         }}
