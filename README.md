@@ -5,3 +5,4 @@ Assignment2 - Stack Navigator, Drawers, Icons.
 Assignment3 - ngrok and axios.
 Assignment4 - Redux Basics.
 Assignment5 - Redux with hooks.
+Final project - Todo app
