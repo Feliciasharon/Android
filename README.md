@@ -1,8 +1,3 @@
-Android Club Assignments
+# Android Club - Todo App
 
-Assignment1 - Introduction to React-native and installation of Android Studio.
-Assignment2 - Stack Navigator, Drawers, Icons.
-Assignment3 - ngrok and axios.
-Assignment4 - Redux Basics.
-Assignment5 - Redux with hooks.
-Final project - Todo app
+A Todo app was built using the concepts- Stack Navigator, Drawers, Icons, ngrok and axios and Redux in Android studio as the final project for the course.
